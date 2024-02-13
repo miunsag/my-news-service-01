@@ -8,5 +8,8 @@ services:
       - ${HOST_PORT_PREFIX}55:5555
     volumes:
       - ${HOST_MSR_LICENSE_FILE}:${GUEST_LIC_MOUNT_POINT}
+      - ./application.properties:${GUEST_APP_PROPS_MOUNT_POINT}
     environment:
       - SAG_IS_LICENSE_FILE=${GUEST_LIC_MOUNT_POINT}
+      - SAG_IS_CONFIG_PROPERTIES=${GUEST_APP_PROPS_MOUNT_POINT}
+
