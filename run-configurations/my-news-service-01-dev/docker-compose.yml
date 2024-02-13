@@ -7,6 +7,6 @@ services:
     ports:
       - ${HOST_PORT_PREFIX}55:5555
     volumes:
-      - ${HOST_MSR_LICENSE_FILE}:/tmp/license.xml
+      - ${HOST_MSR_LICENSE_FILE}:${GUEST_LIC_MOUNT_POINT}
     environment:
-      - SAG_IS_LICENSE_FILE=/tmp/license.xml
+      - SAG_IS_LICENSE_FILE=${GUEST_LIC_MOUNT_POINT}
