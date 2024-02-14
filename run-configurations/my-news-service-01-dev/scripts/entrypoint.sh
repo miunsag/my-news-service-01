@@ -22,7 +22,7 @@ d=$(date +%Y-%m-%dT%H.%M.%S_%3N)
 # $1 - snapshot new folder name 
 # $2 - snapshot reason
 produceHomeSnapshot(){
-  if [ ${LOCAL_PRODUCE_DUMPS} -ne 0 ]; then
+  if [ "${LOCAL_PRODUCE_DUMPS}" -ne 0 ]; then
     mkdir -p "/mnt/local/s${d}" || return 3
     echo "Producing a snapshot for SAG_HOME in ${1} with reason ${2}"
     pushd .
@@ -52,7 +52,7 @@ portIsReachable(){
 # wait for MSR to come up...
 
 while ! portIsReachable localhost 5555; do
-    logI "Waiting for MSR to come up, sleeping 5..."
+    echo "Waiting for MSR to come up, sleeping 5..."
     sleep 5
 done
 

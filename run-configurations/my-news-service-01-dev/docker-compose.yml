@@ -15,4 +15,5 @@ services:
     environment:
       - SAG_IS_LICENSE_FILE=${GUEST_LIC_MOUNT_POINT}
       - SAG_IS_CONFIG_PROPERTIES=${GUEST_APP_PROPS_MOUNT_POINT}
+      - LOCAL_PRODUCE_DUMPS=1
     entrypoint: /mnt/scripts/entrypoint.sh
