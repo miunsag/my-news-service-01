@@ -13,6 +13,7 @@ services:
       - ./local/:/mnt/local/
       - ./scripts/:/mnt/scripts/
       - ../../code/is-packages/MyNewsService/:${GUEST_IS_HOME}/packages/MyNewsService/
+      - ../../code/is-packages/MyMailService/:${GUEST_IS_HOME}/packages/MyMailService/
     environment:
       - SAG_IS_LICENSE_FILE=${GUEST_LIC_MOUNT_POINT}
       - SAG_IS_CONFIG_PROPERTIES=${GUEST_APP_PROPS_MOUNT_POINT}
