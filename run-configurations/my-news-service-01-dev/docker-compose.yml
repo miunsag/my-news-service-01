@@ -9,7 +9,10 @@ services:
     volumes:
       - ${HOST_MSR_LICENSE_FILE}:${GUEST_LIC_MOUNT_POINT}
       - ./application.properties:${GUEST_APP_PROPS_MOUNT_POINT}
+      - ../../:/mnt/project-home/
+      - ./local/:/mnt/local/
+      - ./scripts/:/mnt/scripts/
     environment:
       - SAG_IS_LICENSE_FILE=${GUEST_LIC_MOUNT_POINT}
       - SAG_IS_CONFIG_PROPERTIES=${GUEST_APP_PROPS_MOUNT_POINT}
-
+    entrypoint: /mnt/scripts/entrypoint.sh
