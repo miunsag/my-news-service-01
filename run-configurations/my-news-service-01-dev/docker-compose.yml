@@ -26,4 +26,6 @@ services:
       # NEWS API configuration
       - NEWSAPI_BASE_URL
       - NEWSAPI_API_KEY
+      # daily news recipient email
+      - PUSH_TO_EMAIL
     # entrypoint: /mnt/scripts/entrypoint.sh
