@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# shellcheck source=SCRIPTDIR/setEnv.sh
-# shellcheck disable=SC1091
+# shellcheck source-path=SCRIPTDIR/..
 . ./buildScripts/setEnv.sh
 
 echo "Getting service principal credentials..."
@@ -11,6 +10,7 @@ if [ ! -f "${ACRSPCREDENTIALS_SECUREFILEPATH}" ]; then
 fi
 
 chmod u+x "${ACRSPCREDENTIALS_SECUREFILEPATH}"
+# shellcheck source=/dev/null
 . "${ACRSPCREDENTIALS_SECUREFILEPATH}"
 
 if [ -z ${AZ_ACR_SP_ID+x} ]; then
